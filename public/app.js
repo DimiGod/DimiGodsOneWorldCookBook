@@ -332,7 +332,7 @@ $(document).ready(function() {
 //Creating new container from chirpy example
 /* global moment */
 
-// When the page loads, grab and display all of our chirps
+// When the page loads, grab and display all of our recipes
 $.get("/api/all", function(data) {
 
   if (data.length !== 0) {
@@ -340,13 +340,13 @@ $.get("/api/all", function(data) {
     for (var i = 0; i < data.length; i++) {
 
       var row = $("<div>");
-      row.addClass("chirp");
+      row.addClass("recipe");
 
-      row.append("<p>" + data[i].author + " chirped.. </p>");
+      row.append("<p>" + data[i].author + " added... </p>");
       row.append("<p>" + data[i].body + "</p>");
       row.append("<p>At " + moment(data[i].created_at).format("h:mma on dddd") + "</p>");
 
-      $("#chirp-area").prepend(row);
+      $("#recipe-area").prepend(row);
 
     }
 
@@ -375,6 +375,7 @@ $("#chirp-submit").on("click", function(event) {
       var row = $("<div>");
       row.addClass("chirp");
 
+      row.append("<p>" + newChirp.author + " chirped: </p>");
       row.append("<p>" + newChirp.author + " chirped: </p>");
       row.append("<p>" + newChirp.body + "</p>");
       row.append("<p>At " + moment(newChirp.created_at).format("h:mma on dddd") + "</p>");
