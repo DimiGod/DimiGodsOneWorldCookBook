@@ -8,7 +8,8 @@ body {
     border-radius: 50%;
 }
 .recipe{
-    background-color: lightslategray;
+    background-color: #eecf70;
     padding: 10px;
     margin: 10px;
+    color: black
 }

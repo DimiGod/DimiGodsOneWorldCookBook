@@ -9,8 +9,8 @@ $.get("/api/all", function(data) {
       var row = $("<div>");
       row.addClass("recipe");
 
-      row.append("<h3>" + data[i].author + " added... </h3>");
-      row.append("<h4>" + data[i].sandwich + "</h4>");
+      row.append("<h4>" + data[i].author + " added... </h4>");
+      row.append("<h3>" + data[i].sandwich + "</h3>");
       row.append("<p>" + data[i].ingredients + "</p>");
       row.append("<p>" + moment(data[i].created_at).format("h:mma on dddd") + "</p>");
 
@@ -43,8 +43,8 @@ $("#recipe-submit").on("click", function(event) {
 
       var row = $("<div>");
       row.addClass("recipe");
-      row.append("<h3>" + newRecipe.author + " </h3>");
-      row.append("<h4>" + newRecipe.sandwich + "</h4>");
+      row.append("<h4>" + newRecipe.author + " </h4>");
+      row.append("<h3>" + newRecipe.sandwich + "</h3>");
       row.append("<p>" + newRecipe.ingredients + "</p>");
       row.append("<p>" + moment(newRecipe.created_at).format("h:mma on dddd") + "</p>");
 
