@@ -22,7 +22,7 @@ module.exports = function(app) {
 
     var dbQuery = "INSERT INTO recipes (author, sandwich, ingredients, created_at) VALUES (?,?,?,?)";
 
-    connection.query(dbQuery, [req.body.author, req.body.sandwich,req.body.ingredients, req.body.created_at], function(err, result) {
+    connection.query(dbQuery, [req.body.author, req.body.sandwich, req.body.ingredients, req.body.created_at], function(err, result) {
       if (err) throw err;
       console.log("Recipe Successfully Saved!");
       res.end();
