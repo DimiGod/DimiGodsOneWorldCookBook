@@ -9,7 +9,7 @@ $.get("/api/all", function(data) {
       var row = $("<div>");
       row.addClass("recipe");
 
-      row.append(`<img src= "` + data[i].img + `">`);
+      row.append(`<img src= "` + data[i].img + `" class="sammy">`);
       row.append("<h4>" + data[i].author + " added... </h4>");
       row.append("<h3>" + data[i].sandwich + "</h3>");
       row.append("<p>" + data[i].ingredients + "</p>");
@@ -23,11 +23,11 @@ $.get("/api/all", function(data) {
 
 });
 
-// When user chirps (clicks addBtn)
+// When user adds recipe (clicks addBtn)
 $("#recipe-submit").on("click", function(event) {
   event.preventDefault();
 
-  // Make a newChirp object
+  // Make a new recipe object
   var newRecipe = {
     img: $("#image").val().trim(),
     author: $("#author").val().trim(),

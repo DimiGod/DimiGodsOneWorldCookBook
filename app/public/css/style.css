@@ -13,3 +13,10 @@ body {
     margin: 10px;
     color: black
 }
+.sammy{
+    max-width: 500px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom:1em;
+}
