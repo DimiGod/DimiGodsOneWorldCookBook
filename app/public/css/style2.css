@@ -1,5 +1,5 @@
 body {
-    background-image: url("../images/wallpaper.jpg");
+    background-image: url("../images/wallpaper1.jpg");
 }
 #logo {
     border-radius: 50%;
@@ -13,6 +13,3 @@ body {
     margin: 10px;
     color: black;
 }
-/* #sammy{
-    max-width: 500px;
-} */

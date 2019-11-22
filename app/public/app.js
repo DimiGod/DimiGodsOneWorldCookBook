@@ -6,14 +6,14 @@ $.get("/api/all", function(data) {
 
     for (var i = 0; i < data.length; i++) {
 
-      var row = $("<div>");
+      var row = $('<div class="card" style="width: 50rem;">');
       row.addClass("recipe");
 
-      row.append(`<img src= "` + data[i].img + `" class="sammy">`);
-      row.append("<h4>" + data[i].author + " added... </h4>");
-      row.append("<h3>" + data[i].sandwich + "</h3>");
-      row.append("<p>" + data[i].ingredients + "</p>");
-      row.append("<p>" + moment(data[i].created_at).format("h:mma on dddd") + "</p>");
+      row.append(`<img src= "` + data[i].img + `" class="card-img-top" id="sammy">`);
+      row.append(`<div class="card-body"> <h5 class="card-title">` + data[i].author + ` added... </h5>`);
+      row.append(`<h5 class="card-title">` + data[i].sandwich + "</h5>");
+      row.append(`<p class="card-text">` + data[i].ingredients + '</p>');
+      row.append("<p>" + moment(data[i].created_at).format("h:mma on dddd") + "</p> </div>");
 
       $("#recipe-area").prepend(row);
 
@@ -43,13 +43,13 @@ $("#recipe-submit").on("click", function(event) {
     // On success, run the following code
     .then(function() {
 
-      var row = $("<div>");
+      var row = $('<div class="card" style="width: 50rem;">');
       row.addClass("recipe");
-      row.append(`<img src= "` + newRecipe.img + `">`);
-      row.append("<h4>" + newRecipe.author + " </h4>");
-      row.append("<h3>" + newRecipe.sandwich + "</h3>");
-      row.append("<p>" + newRecipe.ingredients + "</p>");
-      row.append("<p>" + moment(newRecipe.created_at).format("h:mma on dddd") + "</p>");
+      row.append(`<img src= "` + newRecipe.img + `" class="card-img-top" id="sammy">`);
+      row.append(`<div class="card-body"> <h5 class="card-title">` + newRecipe.author + " </h5>");
+      row.append(`<h5 class="card-title">` + newRecipe.sandwich + `</h5>`);
+      row.append(`<p class="card-text">` + newRecipe.ingredients + `</p>`);
+      row.append("<p>" + moment(newRecipe.created_at).format("h:mma on dddd") + "</p> </div>");
 
       $("#recipe-area").prepend(row);
 
