@@ -9,6 +9,7 @@ $.get("/api/all", function(data) {
       var row = $("<div>");
       row.addClass("recipe");
 
+      row.append(`<img src= "` + data[i].img + `">`);
       row.append("<h4>" + data[i].author + " added... </h4>");
       row.append("<h3>" + data[i].sandwich + "</h3>");
       row.append("<p>" + data[i].ingredients + "</p>");
@@ -28,6 +29,7 @@ $("#recipe-submit").on("click", function(event) {
 
   // Make a newChirp object
   var newRecipe = {
+    img: $("#image").val().trim(),
     author: $("#author").val().trim(),
     sandwich: $("#sandwich").val().trim(),
     ingredients: $("#ingredients-box").val().trim(),
@@ -43,6 +45,7 @@ $("#recipe-submit").on("click", function(event) {
 
       var row = $("<div>");
       row.addClass("recipe");
+      row.append(`<img src= "` + newRecipe.img + `">`);
       row.append("<h4>" + newRecipe.author + " </h4>");
       row.append("<h3>" + newRecipe.sandwich + "</h3>");
       row.append("<p>" + newRecipe.ingredients + "</p>");
@@ -53,6 +56,7 @@ $("#recipe-submit").on("click", function(event) {
     });
 
   // Empty each input box by replacing the value with an empty string
+  $("#image").val("");
   $("#author").val("");
   $("#sandwich").val("");
   $("#ingredients-box").val("");
