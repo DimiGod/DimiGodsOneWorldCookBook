@@ -5,8 +5,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <!--Bootstrap Styling-->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <!--Bootstrap Javascript-->
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.0/js/bootstrap.min.js" integrity="sha384-3qaqj0lc6sV/qpzrc1N5DC6i1VRn/HyX4qdPaiEFbn54VjQBEU341pvjz7Dv3n6P" crossorigin="anonymous"></script>
+  <!--CSS Stylesheet-->
   <link rel="stylesheet" href="css/style2.css">
   <!-- jQuery -->
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
@@ -46,10 +52,51 @@
   </div>
   <!--Recipe Container-->
 
-
   <div class="container" style="margin-top:1em;">
-    <div class="jumbotron bg-dark text-white">
-      <h1 class="text-center">New Recipe</h1>
+    <div class="jumbotron bg-dark text-white" id="feed">
+      <!-- Button trigger modal -->
+<button style="margin-bottom:2em;" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+    Add New Recipe
+  </button>
+  
+  <!-- Modal -->
+      <div class="modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">New Recipe</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div class="row">
+                <div class="col-sm-8 col-sm-offset-2">
+                  <p class="cool-font">Image Link</p>
+                  <input class="form-control" type="text" id="image" placeholder="Paste Link to Image Here">
+                  <br>
+                  <p class="cool-font">Author</p>
+                  <input class="form-control" type="text" id="author" placeholder="Enter Your Name">
+                  <br>
+                  <p class="cool-font">Sandwich Name</p>
+                  <input class="form-control" type="text" id="sandwich" placeholder="Name Your Masterpiece">
+                  <br>
+                  <p class="cool-font">Recipe</p>
+                  <textarea class="form-control" rows="3" id="ingredients-box"
+                    placeholder="List Your Ingredients!"></textarea>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button id="recipe-submit" style="margin-top:1em;" style="margin-bottom:1em;"
+                class="btn btn-primary btn-lg">Submit!</button>
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+<!--End Modal-->
+<!--Start Recipe Feed-->
 
       <div class="row">
         <div class="col-sm-8 col-sm-offset-2">

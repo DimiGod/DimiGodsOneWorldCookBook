@@ -6,7 +6,7 @@ $.get("/api/all", function(data) {
 
     for (var i = 0; i < data.length; i++) {
 
-      var row = $('<div class="card" style="width: 50rem;">');
+      var row = $('<div class="card"  style="width: 50rem;">');
       row.addClass("recipe");
 
       row.append(`<img src= "` + data[i].img + `" class="card-img-top" id="sammy">`);
