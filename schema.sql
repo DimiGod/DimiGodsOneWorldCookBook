@@ -8,7 +8,6 @@ CREATE TABLE `recipes` (
   `author` VARCHAR( 255) NOT NULL,
   `sandwich` VARCHAR( 255) NOT NULL,
   `ingredients` VARCHAR( 255 ) NOT NULL,
-  `likes` Int(11) AUTO_INCREMENT NOT NULL,
   `created_at` DATETIME NOT NULL,
 
    PRIMARY KEY ( `id` ) 
