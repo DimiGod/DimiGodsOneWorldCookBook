@@ -20,12 +20,27 @@ module.exports = function(app) {
     console.log("Recipe Data:");
     console.log(req.body);
 
-    var dbQuery = "INSERT INTO recipes (img, author, sandwich, ingredients, created_at) VALUES (?,?,?,?,?)";
+    var dbQuery = "INSERT INTO recipes (img, author, sandwich, ingredients, created_at, likes) VALUES (?,?,?,?,?,?)";
 
-    connection.query(dbQuery, [req.body.img, req.body.author, req.body.sandwich, req.body.ingredients, req.body.created_at], function(err, result) {
+    connection.query(dbQuery, [req.body.img, req.body.author, req.body.sandwich, req.body.ingredients, req.body.created_at, req.body.likes], function(err, result) {
       if (err) throw err;
       console.log("Recipe Successfully Saved!");
       res.end();
     });
   });
+
+
+// Update Like Total
+// app.post("/api/new", function(req, res) {
+//   console.log("Recipe Data:");
+//   console.log(req.body);
+
+//   var dbQuery = "INSERT INTO recipes (img, author, sandwich, ingredients, created_at, likes) VALUES (?,?,?,?,?,?)";
+
+//   connection.query(dbQuery, [req.body.img, req.body.author, req.body.sandwich, req.body.ingredients, req.body.created_at, req.body.likes], function(err, result) {
+//     if (err) throw err;
+//     console.log("Recipe Successfully Saved!");
+//     res.end();
+//   });
+// });
 };
