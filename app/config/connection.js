@@ -22,7 +22,7 @@ connection.connect(function(err) {
   console.log("connected as id " + connection.threadId);
 });
 var rl = readline.createInterface({
-  input: fs.createReadStream('../../schema.sql'),
+  input: fs.createReadStream('./schema.sql'),
   terminal: false
  });
 rl.on('line', function(chunk){
