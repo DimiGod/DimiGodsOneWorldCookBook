@@ -4,6 +4,12 @@ var connection = require("../config/connection.js");
 
 // Routes
 // =============================================================
+connection.query("DROP DATABASE IF EXISTS recipes;");
+connection.query("CREATE DATABASE recipes;");
+connection.query("USE recipes;");
+
+connection.query("CREATE TABLE `recipes` (`id` Int( 11 ) AUTO_INCREMENT NOT NULL,`img` VARCHAR( 1000) NOT NULL,`author` VARCHAR( 255) NOT NULL,`sandwich` VARCHAR( 255) NOT NULL,`ingredients` VARCHAR( 255 ) NOT NULL,`created_at` DATETIME NOT NULL,PRIMARY KEY ( `id` ) );");
+
 module.exports = function(app) {
   // Get all recipes
   app.get("/api/all", function(req, res) {
