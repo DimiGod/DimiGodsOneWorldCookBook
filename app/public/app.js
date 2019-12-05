@@ -14,7 +14,6 @@ $.get("/api/all", function(data) {
       row.append(`<h5 class="card-title">` + data[i].sandwich + "</h5>");
       row.append(`<p class="card-text">` + data[i].ingredients + '</p>');
       row.append("<p>" + moment(data[i].created_at).format("h:mma on dddd") + "</p>");
-      row.append('<button type="submit" id="like" class="btn btn-primary">Like</button> </div>');
 
       $("#recipe-area").prepend(row);
 
